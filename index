@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home | Scented Senery Shop</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    :root {
+      --main-pink: #ff69b4;
+      --light-pink: #ffb6c1;
+      --pale-pink: #ffe6ea;
+    }
+    
+    body {
+      background-color: #fff9fa;
+    }
+    
+    .navbar {
+      background-color: white !important;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .navbar a {
+      color: var(--main-pink) !important;
+      font-weight: bold;
+      transition: all 0.3s;
+    }
+    
+    .navbar a:hover {
+      color: #d44d8c !important;
+      transform: translateY(-2px);
+    }
+    
+    .navbar-brand {
+      font-size: 1.8rem;
+      font-family: 'Brush Script MT', cursive;
+    }
+    
+    .sidebar {
+      min-width: 200px;
+      background-color: white;
+      padding: 1.5rem;
+      box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+      height: 100vh;
+      position: sticky;
+      top: 0;
+    }
+    
+    .sidebar a {
+      display: block;
+      color: #555;
+      padding: 8px 0;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    
+    .sidebar a:hover {
+      color: var(--main-pink);
+      padding-left: 5px;
+    }
+    
+    .welcome-text h1 {
+      color: var(--main-pink);
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .welcome-text p {
+      font-size: 1.1rem;
+      color: #666;
+      max-width: 800px;
+    }
+    
+    .hero-image {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin: 2rem 0;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .product-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      transition: all 0.3s;
+      margin-bottom: 2rem;
+    }
+    
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+    
+    .product-img {
+      height: 200px;
+      object-fit: cover;
+      width: 100%;
+    }
+    
+    .product-body {
+      padding: 1.5rem;
+    }
+    
+    .product-title {
+      color: var(--main-pink);
+      font-weight: bold;
+    }
+    
+    .price {
+      font-weight: bold;
+      color: #333;
+      font-size: 1.2rem;
+    }
+    
+    .btn-pink {
+      background-color: var(--main-pink);
+      color: white;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 20px;
+      transition: all 0.3s;
+    }
+    
+    .btn-pink:hover {
+      background-color: #d44d8c;
+      color: white;
+      transform: translateY(-2px);
+    }
+    
+    .section-title {
+      color: var(--main-pink);
+      border-bottom: 2px solid var(--light-pink);
+      padding-bottom: 10px;
+      margin: 2rem 0 1.5rem;
+    }
+    
+    .banner {
+      background: linear-gradient(135deg, #ffb6c1, #ff69b4);
+      color: white;
+      padding: 2rem;
+      border-radius: 10px;
+      margin: 2rem 0;
+      text-align: center;
+    }
+    
+    .social-icons {
+      margin-top: 2rem;
+    }
+    
+    .social-icons a {
+      color: var(--main-pink);
+      font-size: 1.5rem;
+      margin-right: 15px;
+      transition: all 0.3s;
+    }
+    
+    .social-icons a:hover {
+      color: #d44d8c;
+      transform: translateY(-3px);
+    }
+
+.carousel-indicators button {
+  background-color: var(--main-pink);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+
+.carousel-item {
+  transition: transform 0.6s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .carousel-item img {
+    height: 300px !important;
+  }
+}
+    
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-light border-bottom sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <i class="fas fa-spa me-2"></i>Scented Senery
+      </a>
+      <div class="navbar-nav">
+        <a class="nav-link active" href="index.html">Home</a>
+        <a class="nav-link" href="about.html">About Us</a>
+        <a class="nav-link" href="products.html">Products</a>
+        <a class="nav-link" href="contact.html">Contact Us</a>
+        <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i></a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid mt-3">
+    <div class="row">
+      <div class="col-md-3 sidebar d-none d-md-block">
+        <h4 class="mb-4"><i class="fas fa-bars me-2"></i>Menu</h4>
+        <a href="#"><i class="fas fa-star me-2"></i>New Arrivals</a>
+        <a href="#"><i class="fas fa-tags me-2"></i>Brands</a>
+        <a href="#"><i class="fas fa-male me-2"></i>Men</a>
+        <a href="#"><i class="fas fa-female me-2"></i>Women</a>
+        <a href="#"><i class="fas fa-venus-mars me-2"></i>Unisex</a>
+        <a href="#"><i class="fas fa-percent me-2"></i>Deals</a>
+        
+        <div class="mt-5">
+          <h5><i class="fas fa-filter me-2"></i>Filter By</h5>
+          <div class="form-check mt-3">
+            <input class="form-check-input" type="checkbox" id="floral">
+            <label class="form-check-label" for="floral">Floral</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="woody">
+            <label class="form-check-label" for="woody">Woody</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="citrus">
+            <label class="form-check-label" for="citrus">Citrus</label>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-9">
+        <div class="welcome-text p-4">
+          <h1>Welcome to Scented Senery Shop!</h1>
+          <p>Our carefully selected collection of aromas features a diverse range of scents. Keep scrolling to find out more. Happy scrolling!</p>
+        </div>
+<!-- carousel slide-->
+<div id="perfumeCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
+  <div class="carousel-inner rounded" style="box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+    <!-- Slide component 1 -->
+    <div class="carousel-item active">
+      <img src="https://images.pexels.com/photos/965731/pexels-photo-965731.jpeg?cs=srgb&dl=pexels-valeriya-965731.jpg&fm=jpg"
+           class="d-block w-100" 
+           style="height: 400px; object-fit: cover;" 
+           alt="Luxury perfume collection">
+      <div class="carousel-caption d-none d-md-block" style="background: rgba(255, 105, 180, 0.7); border-radius: 5px; padding: 10px;">
+        <h5>Signature Collection</h5>
+        <p>Discover our most iconic fragrances</p>
+      </div>
+    </div>
+    
+    <!-- Slide component 2 -->
+    <div class="carousel-item">
+      <img src="https://images.pexels.com/photos/26838654/pexels-photo-26838654.jpeg?cs=srgb&dl=pexels-maram-145487840-26838654.jpg&fm=jpg" 
+           class="d-block w-100" 
+           style="height: 400px; object-fit: cover;" 
+           alt="Perfume ingredients">
+      <div class="carousel-caption d-none d-md-block" style="background: rgba(255, 105, 180, 0.7); border-radius: 5px; padding: 10px;">
+        <h5>Winter Specials</h5>
+        <p>Crisp scents for cozy nights!</p>
+      </div>
+    </div>
+    
+    <!-- Slide component 3 -->
+    <div class="carousel-item">
+      <img src="https://www.lizzieinlace.com/wp-content/uploads/2024/04/1-lancome-la-vie-est-belle-review-1440x1316.jpg" 
+           class="d-block w-100" 
+           style="height: 400px; object-fit: cover;" 
+           alt="Perfume bottles">
+      <div class="carousel-caption d-none d-md-block" style="background: rgba(255, 105, 180, 0.7); border-radius: 5px; padding: 10px;">
+        <h5>New Arrivals</h5>
+        <p>Explore our latest creations</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Nav Arrows -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#perfumeCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#perfumeCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  </button>
+</div>
+        <div class="banner">
+          <h2><i class="fas fa-gift me-2"></i> Winter Sale - Up to 40% Off!</h2>
+          <p>Limited time offer on selected fragrances</p>
+          <button class="btn btn-light mt-2">Shop Now</button>
+        </div>
+        
+        <h3 class="section-title"><i class="fas fa-fire me-2"></i> Popular Products</h3>
+        
+        <div class="row">
+          <div class="col-md-4">
+            <div class="product-card">
+              <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" class="product-img" alt="Floral perfume">
+              <div class="product-body">
+                <h5 class="product-title">Enchanted Bloom</h5>
+                <p class="text-muted">Floral fragrance with notes of jasmine and rose</p>
+                <p class="price">$59.99</p>
+                <button class="btn btn-pink">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+
+<div class="carousel-indicators">
+  <button type="button" data-bs-target="#perfumeCarousel" data-bs-slide-to="0" class="active"></button>
+  <button type="button" data-bs-target="#perfumeCarousel" data-bs-slide-to="1"></button>
+  <button type="button" data-bs-target="#perfumeCarousel" data-bs-slide-to="2"></button>
+</div>
+          
+          <div class="col-md-4">
+            <div class="product-card">
+              <img src="https://i.pinimg.com/originals/56/48/e3/5648e3520d1bc8d118ce87058b469dfa.jpg" height="200" width="400">
+              <div class="product-body">
+                <h5 class="product-title">Prada Candy</h5>
+                <p class="text-muted">Earthy fragrance with sandalwood and amber</p>
+                <p class="price">$64.99</p>
+                <button class="btn btn-pink">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-4">
+            <div class="product-card">
+              <img src="https://images.unsplash.com/photo-1611063362351-d89cae3f7a77?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" class="product-img" alt="Citrus perfume">
+              <div class="product-body">
+                <h5 class="product-title">Citrus Breeze</h5>
+                <p class="text-muted">Fresh fragrance with lemon and bergamot</p>
+                <p class="price">$54.99</p>
+                <button class="btn btn-pink">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="social-icons text-center">
+          <p>Follow us for more updates!</p>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-pinterest"></i></a>
+          <a href="#"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
