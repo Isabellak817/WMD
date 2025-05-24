@@ -11,6 +11,7 @@
       --main-pink: #ff69b4;
       --light-pink: #ffb6c1;
       --pale-pink: #ffe6ea;
+      --beige; #F5F5DC;
     }
 
     body {
@@ -18,7 +19,6 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       height: 100%;
       margin: 0;
-      position: center;
     }
 
     .navbar {
@@ -40,33 +40,6 @@
     .navbar-brand {
       font-size: 1.8rem;
       font-family: 'Brush Script MT', cursive;
-    }
-
-    #sidebar {
-      background-color: var(--pale-pink);
-      padding: 1rem;
-      box-shadow: 2px 0 10px rgba(0,0,0,0.05);
-    }
-
-    #sidebar a {
-      color: #555;
-      text-decoration: none;
-      padding: 0.5rem;
-      display: inline-block;
-      transition: 0.2s;
-      height: 100%;
-    }
-
-    #sidebar a:hover {
-      color: var(--main-pink);
-      padding-left: 5px;
-    }
-
-    .sidebar-horizontal {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
     }
 
     .welcome-text h1 {
@@ -207,40 +180,6 @@
     .carousel-indicators .active {
       background-color: #d44d8c;
     }
-
-    @media (max-width: 768px) {
-  #sidebar {
-    flex-direction: column !important;
-    align-items: center;
-  }
-
-  #sidebar a {
-    width: 100%;
-    text-align: center;
-    padding: 10px 0;
-    border-bottom: 1px solid #eee;
-  }
-
-  .carousel-item img {
-    height: 250px !important;
-  }
-}
-
-@media (min-width: 769px) {
-  #sidebar {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  #sidebar a {
-    padding: 0.5rem 1rem;
-    width: 100%;
-  }
-}
-
-}
-
     }
   </style>
 </head>
@@ -273,15 +212,19 @@
   <button class="btn btn-pink w-100 d-md-none mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu">
     Browse Categories
   </button>
-  <div id="sidebarMenu" class="collapse d-md-block">
-    <div id="sidebar" class="d-flex flex-column align-items-start">
-      <a href="#"><i class="fas fa-star me-2"></i>New Arrivals</a>
-      <a href="#"><i class="fas fa-tags me-2"></i>Brands</a>
-      <a href="#"><i class="fas fa-male me-2"></i>Men</a>
-      <a href="#"><i class="fas fa-female me-2"></i>Women</a>
-      <a href="#"><i class="fas fa-venus-mars me-2"></i>Unisex</a>
-      <a href="#"><i class="fas fa-percent me-2"></i>Deals</a>
-    </div>
+  <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Products
+  </a>
+  <ul class="dropdown-menu" aria-labelledby="productsDropdown">
+    <li><a class="dropdown-item" href="#">New Arrivals</a></li>
+    <li><a class="dropdown-item" href="#">Brands</a></li>
+    <li><a class="dropdown-item" href="#">Men</a></li>
+    <li><a class="dropdown-item" href="#">Women</a></li>
+    <li><a class="dropdown-item" href="#">Unisex</a></li>
+    <li><a class="dropdown-item" href="#">Deals</a></li>
+  </ul>
+</li>
     <div class="row align-items-stretch">
   </div>
 </div>
