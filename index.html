@@ -232,6 +232,7 @@
     @media (max-width: 600px) {
       .sidebar-toggle-button {
         display: block; /* Show on smaller screens */
+        position: relative;
       }
       #sidebar {
         display: none; /* Initially hide sidebar on mobile */
@@ -242,7 +243,7 @@
       /* Mobile Menu Styling */
     #mobileMenu {
       position:relative;
-    flex-direction: row; /* Arrange items horizontally */
+    flex-direction: column; /* Arrange items vertically */
       background-color: var(--pale-pink);
       padding: 1rem;
       border-radius: 5px;
