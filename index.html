@@ -12,105 +12,85 @@
       --light-pink: #ffb6c1;
       --pale-pink: #ffe6ea;
     }
-    
+
     body {
       background-color: beige;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-    
+
     .navbar {
       background-color: beige !important;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
-    
+
     .navbar a {
       color: var(--main-pink) !important;
       font-weight: bold;
       transition: all 0.3s;
     }
-    
+
     .navbar a:hover {
       color: #d44d8c !important;
       transform: translateY(-2px);
     }
-    
+
     .navbar-brand {
       font-size: 1.8rem;
       font-family: 'Brush Script MT', cursive;
     }
 
-    .nav-button {
-    background-color: beige; 
-    color: #FF69B4; 
-    border: none; /* No border */
-    padding: 0.5rem 1rem; /* Padding for the button */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s ease; /* Smooth transition */
-    }
-
-    @media (min-width: 769px) {
-    nav {
-        flex-direction: column; /* Change to vertical layout */
-        align-items: flex-start; /* Align items to the start */
-    }
-
-    nav a, .nav-button {
-        width: 100%; /* Full width for each item */
-        margin: 5px 0; /* Space between items */
-    }
-      
-    #sidebar { /* Added ID for sidebar */
-      display: none;
-      min-width: 200px;
-      background-color: var(--pale-pink); /* Changed background color */
-      padding: 1.5rem;
+    #sidebar {
+      background-color: var(--pale-pink);
+      padding: 1rem;
       box-shadow: 2px 0 10px rgba(0,0,0,0.05);
-      height: 100vh;
-      position: relative;
-      bottom: 0;
-      overflow-y: auto; /* Added for scrollbar if content exceeds height */
     }
-    
+
     #sidebar a {
-      display: block;
       color: #555;
-      padding: 8px 0;
       text-decoration: none;
-      transition: all 0.2s;
+      padding: 0.5rem;
+      display: inline-block;
+      transition: 0.2s;
     }
-    
+
     #sidebar a:hover {
       color: var(--main-pink);
       padding-left: 5px;
     }
-    
+
+    .sidebar-horizontal {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
     .welcome-text h1 {
       color: var(--main-pink);
       font-size: 2.5rem;
       margin-bottom: 1.5rem;
     }
-    
+
     .welcome-text p {
       font-size: 1.1rem;
       color: #666;
       max-width: 800px;
       line-height: 1.6;
     }
-    
+
     .carousel {
       border-radius: 10px;
       overflow: hidden;
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
       margin: 2rem 0;
     }
-    
+
     .carousel-item img {
       height: 400px;
       object-fit: cover;
       width: 100%;
     }
-    
+
     .carousel-caption {
       background: rgba(255, 105, 180, 0.7);
       border-radius: 5px;
@@ -120,45 +100,44 @@
       transform: translateX(-50%);
       width: 80%;
     }
-    
+
     .product-card {
       background: white;
       border-radius: 10px;
       overflow: hidden;
       box-shadow: 0 3px 10px rgba(0,0,0,0.1);
       transition: all 0.3s;
-      margin-bottom: 2rem;
       height: 100%;
     }
-    
+
     .product-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 20px rgba(0,0,0,0.15);
     }
-    
+
     .product-img {
       height: 200px;
       object-fit: cover;
       width: 100%;
     }
-    
+
     .product-body {
       padding: 1.5rem;
     }
-    
+
     .product-title {
       color: var(--main-pink);
       font-weight: bold;
       margin-bottom: 0.5rem;
     }
-    
+
     .price {
       font-weight: bold;
       color: #333;
       font-size: 1.2rem;
       margin: 0.5rem 0;
     }
-    
+
     .btn-pink {
       background-color: var(--main-pink);
       color: white;
@@ -166,16 +145,14 @@
       padding: 8px 20px;
       border-radius: 20px;
       transition: all 0.3s;
-      display: inline-block;
-      margin-top: 10px;
     }
-    
+
     .btn-pink:hover {
       background-color: #d44d8c;
       color: white;
       transform: translateY(-2px);
     }
-    
+
     .section-title {
       color: var(--main-pink);
       border-bottom: 2px solid var(--light-pink);
@@ -183,7 +160,7 @@
       margin: 2rem 0 1.5rem;
       font-size: 1.5rem;
     }
-    
+
     .banner {
       background: linear-gradient(135deg, #ffb6c1, #ff69b4);
       color: white;
@@ -192,20 +169,19 @@
       margin: 2rem 0;
       text-align: center;
     }
-    
+
     .social-icons {
       margin-top: 2rem;
       text-align: center;
     }
-    
+
     .social-icons a {
       color: var(--main-pink);
       font-size: 1.5rem;
       margin: 0 10px;
       transition: all 0.3s;
-      display: inline-block;
     }
-    
+
     .social-icons a:hover {
       color: #d44d8c;
       transform: translateY(-3px);
@@ -214,7 +190,7 @@
     .carousel-indicators {
       bottom: -35px;
     }
-    
+
     .carousel-indicators button {
       background-color: var(--main-pink);
       width: 10px;
@@ -223,102 +199,68 @@
       margin: 0 5px;
       border: none;
     }
-    
+
     .carousel-indicators .active {
       background-color: #d44d8c;
     }
 
     @media (max-width: 768px) {
-      #sidebar { /* Added ID for sidebar */
-        position: relative;
-        height: auto;
+      #sidebar {
+        flex-direction: row !important;
+        justify-content: center;
       }
-      .navbar-nav {
-        flex-direction: row;
-        justify-content: space-around;
-      }
+
       .carousel-item img {
         height: 250px !important;
       }
     }
-    
-    .sidebar-toggle-button {
-      display: none; /* Hide on larger screens */
-      background-color: var(--main-pink);
-      color: white;
-      border: none;
-      padding: 8px 15px;
-      border-radius: 5px;
-      margin-bottom: 1rem;
-    }
-    @media (max-width: 600px) {
-      .sidebar-toggle-button {
-        display: block; /* Show on smaller screens */
-        position: relative;
-      }
+
+    @media (min-width: 769px) {
       #sidebar {
-        display: none; /* Initially hide sidebar on mobile */
+        display: flex;
+        flex-direction: column;
+        height: 100%;
       }
-      #sidebar.show {
-        left: 0; 
-      } 
-</style>
- </head>
+    }
+  </style>
+</head>
 <body>
-  <nav class="navbar navbar-expand-lg bg-light border-bottom sticky-top">
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
-      <a class="navbar-brand" href="#">
-        <i class="fas fa-spa me-2"></i>Scented Scenery
-      </a>
-      <button class="navbar-toggler collapsed" type="button" data-bs-toggle= "collapse" data-bs-target= "#navbarNav" aria-expanded="false">
-  </button>
-      <div class="navbar-collapse collapse" id="navbarNav" style=>
-      <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-        <li class="nav-item"><a class="nav-link" href="create account.html">Create account/Login</a></li>
-        <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
-      </ul>
+      <a class="navbar-brand" href="#"><i class="fas fa-spa me-2"></i>Scented Scenery</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="create account.html">Create account/Login</a></li>
+          <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
 
+  <!-- Main Content -->
   <div class="container-fluid mt-3">
     <div class="row">
-      <div class="col-md-3 sidebar" id="sidebar">
-        <h4 class="mb-4"><i class="fas fa-bars me-2"></i>Menu</h4>
-        <a href="#"><i class="fas fa-star me-2"></i>New Arrivals</a>
-        <a href="#"><i class="fas fa-tags me-2"></i>Brands</a>
-        <a href="#"><i class="fas fa-male me-2"></i>Men</a>
-        <a href="#"><i class="fas fa-female me-2"></i>Women</a>
-        <a href="#"><i class="fas fa-venus-mars me-2"></i>Unisex</a>
-        <a href="#"><i class="fas fa-percent me-2"></i>Deals</a>
-        
-        <div class="mt-5">
-          <h5><i class="fas fa-filter me-2"></i>Filter By</h5>
-          <div class="form-check mt-3">
-            <input class="form-check-input" type="checkbox" id="floral">
-            <label class="form-check-label" for="floral">Floral</label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="woody">
-            <label class="form-check-label" for="woody">Woody</label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="citrus">
-            <label class="form-check-label" for="citrus">Citrus</label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="oriental">
-            <label class="form-check-label" for="oriental">Oriental</label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="fresh">
-            <label class="form-check-label" for="fresh">Fresh</label>
-          </div>
+      <!-- Sidebar/Menu -->
+      <div class="col-md-3 mb-3">
+        <div id="sidebar" class="d-flex flex-wrap justify-content-center">
+          <a href="#"><i class="fas fa-star me-2"></i>New Arrivals</a>
+          <a href="#"><i class="fas fa-tags me-2"></i>Brands</a>
+          <a href="#"><i class="fas fa-male me-2"></i>Men</a>
+          <a href="#"><i class="fas fa-female me-2"></i>Women</a>
+          <a href="#"><i class="fas fa-venus-mars me-2"></i>Unisex</a>
+          <a href="#"><i class="fas fa-percent me-2"></i>Deals</a>
         </div>
       </div>
-      
+
+      <!-- Main Section -->
       <div class="col-md-9">
         <div class="welcome-text p-4">
           <h1>Welcome to Scented Scenery Shop!</h1>
@@ -332,43 +274,29 @@
             <button type="button" data-bs-target="#perfumeCarousel" data-bs-slide-to="1"></button>
             <button type="button" data-bs-target="#perfumeCarousel" data-bs-slide-to="2"></button>
           </div>
-          
           <div class="carousel-inner">
-            <!-- Slide 1 -->
             <div class="carousel-item active">
-              <img src="https://images.pexels.com/photos/965731/pexels-photo-965731.jpeg" 
-                   class="d-block w-100" 
-                   alt="Luxury perfume collection">
+              <img src="https://images.pexels.com/photos/965731/pexels-photo-965731.jpeg" class="d-block w-100" alt="Luxury perfume collection">
               <div class="carousel-caption d-none d-md-block">
                 <h5>Signature Collection</h5>
                 <p>Discover our most iconic fragrances</p>
               </div>
             </div>
-            
-            <!-- Slide 2 -->
             <div class="carousel-item">
-              <img src="https://images.pexels.com/photos/26838654/pexels-photo-26838654.jpeg" 
-                   class="d-block w-100" 
-                   alt="Perfume ingredients">
+              <img src="https://images.pexels.com/photos/26838654/pexels-photo-26838654.jpeg" class="d-block w-100" alt="Perfume ingredients">
               <div class="carousel-caption d-none d-md-block">
                 <h5>Winter Specials</h5>
                 <p>Crisp scents for cozy nights!</p>
               </div>
             </div>
-            
-            <!-- Slide 3 -->
             <div class="carousel-item">
-              <img src="https://www.lizzieinlace.com/wp-content/uploads/2024/04/1-lancome-la-vie-est-belle-review-1440x1316.jpg" 
-                   class="d-block w-100" 
-                   alt="Perfume bottles">
+              <img src="https://www.lizzieinlace.com/wp-content/uploads/2024/04/1-lancome-la-vie-est-belle-review-1440x1316.jpg" class="d-block w-100" alt="Perfume bottles">
               <div class="carousel-caption d-none d-md-block">
                 <h5>New Arrivals</h5>
                 <p>Explore our latest creations</p>
               </div>
             </div>
           </div>
-          
-          <!-- Navigation Arrows -->
           <button class="carousel-control-prev" type="button" data-bs-target="#perfumeCarousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           </button>
@@ -376,59 +304,18 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
           </button>
         </div>
-        
+
         <div class="banner">
           <h2><i class="fas fa-gift me-2"></i> Winter Sale - Up to 40% Off!</h2>
           <p>Limited time offer on selected fragrances</p>
           <button class="btn btn-light mt-2">Shop Now</button>
         </div>
-        
+
         <h3 class="section-title"><i class="fas fa-fire me-2"></i> Popular Products</h3>
-        
+
         <div class="row">
-          <div class="col-md-4 mb-4">
-            <div class="product-card">
-              <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
-                   class="product-img" 
-                   alt="Floral perfume">
-              <div class="product-body">
-                <h5 class="product-title">Enchanted Bloom</h5>
-                <p class="text-muted">Floral fragrance with notes of jasmine and rose</p>
-                <p class="price">P699.99</p>
-                <button class="btn btn-pink">Add to Cart</button>
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-md-4 mb-4">
-            <div class="product-card">
-              <img src="https://i.pinimg.com/originals/56/48/e3/5648e3520d1bc8d118ce87058b469dfa.jpg" 
-                   class="product-img"
-                   alt="Prada Candy perfume">
-              <div class="product-body">
-                <h5 class="product-title">Prada Candy</h5>
-                <p class="text-muted">Sweet fragrance with caramel and vanilla</p>
-                <p class="price">P739.99</p>
-                <button class="btn btn-pink">Add to Cart</button>
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-md-4 mb-4">
-            <div class="product-card">
-              <img src="https://images.pexels.com/photos/21574966/pexels-photo-21574966/free-photo-of-bottle-of-chanel-no-5-and-a-lemon-on-a-white-background.jpeg" 
-                   class="product-img" 
-                   alt="Citrus perfume">
-              <div class="product-body">
-                <h5 class="product-title">Citrus Breeze</h5>
-                <p class="text-muted">Fresh fragrance with lemon and bergamot</p>
-                <p class="price">P539.99</p>
-                <button class="btn btn-pink">Add to Cart</button>
-              </div>
-            </div>
-          </div>
         </div>
-        
+
         <div class="social-icons">
           <p>Follow us for more updates!</p>
           <a href="#"><i class="fab fa-facebook"></i></a>
@@ -439,18 +326,14 @@
       </div>
     </div>
   </div>
-  
-<footer class="text-center mt-5 py-4" style="background-color: #fff; border-top: 1px solid #ddd;">
-  <p>© Ms.Grad's🎀 Scented Scenery Shop. All rights reserved. </p> 
-  <a href="privacy.html">Privacy Policy</a> | 
-  <a href="terms.html">Terms of Service</a>
-</footer>
+
+  <footer class="text-center mt-5 py-4" style="background-color: #fff; border-top: 1px solid #ddd;">
+    <p>© Ms.Grad's🎀 Scented Scenery Shop. All rights reserved.</p>
+    <a href="privacy.html">Privacy Policy</a> |
+    <a href="terms.html">Terms of Service</a>
+  </footer>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    function toggleSideBar() {
-      const sideBar = document.getElementById('sideBar');
-      sideBar.classList.toggle('show');
-    }
-  </script>
 </body>
 </html>
+
