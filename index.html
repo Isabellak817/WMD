@@ -38,6 +38,15 @@
       font-size: 1.8rem;
       font-family: 'Brush Script MT', cursive;
     }
+
+    .nav-button {
+    background-color: #ff69b4; /* Pink background */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 0.5rem 1rem; /* Padding for the button */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition */
     
     #sidebar { /* Added ID for sidebar */
       display: none;
@@ -50,10 +59,6 @@
       bottom: 0;
       overflow-y: auto; /* Added for scrollbar if content exceeds height */
     }
-
-    #sidebar.show {
-      display: block; /* Show when toggled */
-}
     
     #sidebar a {
       display: block;
@@ -243,7 +248,7 @@
         display: none; /* Initially hide sidebar on mobile */
       }
       #sidebar.show {
-        display: block; /* Show when toggled */
+        left: 0; 
       } 
 </style>
  </head>
