@@ -252,16 +252,20 @@
   <!-- Main Content -->
   <div class="container-fluid mt-3">
     <div class="row">
-      <!-- Sidebar/Menu -->
-      <div class="col-md-3 mb-3">
-        <div id="sidebar" class="d-flex flex-wrap justify-content-center">
-          <a href="#"><i class="fas fa-star me-2"></i>New Arrivals</a>
-          <a href="#"><i class="fas fa-tags me-2"></i>Brands</a>
-          <a href="#"><i class="fas fa-male me-2"></i>Men</a>
-          <a href="#"><i class="fas fa-female me-2"></i>Women</a>
-          <a href="#"><i class="fas fa-venus-mars me-2"></i>Unisex</a>
-          <a href="#"><i class="fas fa-percent me-2"></i>Deals</a>
-        </div>
+      <div class="dropdown">
+       <button class="btn btn-pink dropdown-toggle" type="button" id="browseCategories" data-bs-toggle="dropdown" aria-expanded="false">
+    Browse Categories
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="BrowseCategories">
+    <li><a class="dropdown-item" href="#">New Arrivals</a></li>
+    <li><a class="dropdown-item" href="#">Brands</a></li>
+    <li><a class="dropdown-item" href="#">Men</a></li>
+    <li><a class="dropdown-item" href="#">Women</a></li>
+    <li><a class="dropdown-item" href="#">Unisex</a></li>
+    <li><a class="dropdown-item" href="#">Deals</a></li>
+  </ul>
+  </div>
+
       </div>
 
       <!-- Main Section -->
