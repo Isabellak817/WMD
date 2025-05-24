@@ -11,7 +11,7 @@
       --main-pink: #ff69b4;
       --light-pink: #ffb6c1;
       --pale-pink: #ffe6ea;
-      --beige: #F5F5DC;
+      --beige: #F5F5DC; 
     }
 
     body {
@@ -19,7 +19,7 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       height: 100%;
       margin: 0;
-      overflow-x: hidden;
+      overflow-x: hidden; /* Prevents horizontal scrolling */
     }
 
     .navbar {
@@ -181,7 +181,7 @@
     .carousel-indicators .active {
       background-color: #d44d8c;
     }
-    }
+    
   </style>
 </head>
 <body>
@@ -210,9 +210,9 @@
     <div class="row">
       <!-- Sidebar/Menu -->
       <div class="dropdown">
-       <button class="btn btn-pink dropdown-toggle" type="button" id="browseCategories" data-bs-toggle="dropdown" aria-expanded="false">
-    Browse Categories
-  </button>
+       <button class="btn btn-pink dropdown-toggle" type="button" id="browseCategories" data-bs-toggle="dropdown" aria-expanded="false">
+    Browse Categories
+  </button>
   <ul class="dropdown-menu" aria-labelledby="BrowseCayegories">
     <li><a class="dropdown-item" href="#">New Arrivals</a></li>
     <li><a class="dropdown-item" href="#">Brands</a></li>
@@ -226,8 +226,8 @@
  </div>
 
       <!-- Main Section -->
-      <div class="col-md-9">
-        <div class="row">
+    <div class="col-md-3">
+      <div class="row">
         <div class="welcome-text p-4">
           <h1>Welcome to Scented Scenery Shop!</h1>
           <p>Our carefully selected collection of aromas features a diverse range of scents. Keep scrolling to find out more. Happy scrolling!</p>
@@ -279,8 +279,8 @@
 
         <h3 class="section-title"><i class="fas fa-fire me-2"></i> Popular Products</h3>
 
-         <div class="col-md-4 mb-4">
-           <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="row">
             <div class="product-card">
               <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
                    class="product-img" 
@@ -294,8 +294,8 @@
             </div>
           </div>
           
-          <div class="col-md-4 mb-4">
-            <div class="row">
+         <div class="col-md-4 mb-4">
+          <div class="row">
             <div class="product-card">
               <img src="https://i.pinimg.com/originals/56/48/e3/5648e3520d1bc8d118ce87058b469dfa.jpg" 
                    class="product-img"
@@ -309,8 +309,8 @@
             </div>
           </div>
           
-          <div class="col-md-4 mb-4">
-            <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="row">
             <div class="product-card">
               <img src="https://images.pexels.com/photos/21574966/pexels-photo-21574966/free-photo-of-bottle-of-chanel-no-5-and-a-lemon-on-a-white-background.jpeg" 
                    class="product-img" 
