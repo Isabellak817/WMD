@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Home | Scented Scenery Shop</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
     :root {
@@ -14,7 +14,7 @@
     }
     
     body {
-      background-color: beige;
+      background-color: #fff9fa;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
     
@@ -39,17 +39,18 @@
       font-family: 'Brush Script MT', cursive;
     }
     
-    .sidebar {
+    #sidebar { /* Added ID for sidebar */
       min-width: 200px;
-      background-color: white;
+      background-color: var(--pale-pink); /* Changed background color */
       padding: 1.5rem;
       box-shadow: 2px 0 10px rgba(0,0,0,0.05);
       height: 100vh;
       position: sticky;
       top: 0;
+      overflow-y: auto; /* Added for scrollbar if content exceeds height */
     }
     
-    .sidebar a {
+    #sidebar a {
       display: block;
       color: #555;
       padding: 8px 0;
@@ -57,7 +58,7 @@
       transition: all 0.2s;
     }
     
-    .sidebar a:hover {
+    #sidebar a:hover {
       color: var(--main-pink);
       padding-left: 5px;
     }
@@ -206,16 +207,37 @@
     }
 
     @media (max-width: 768px) {
-      .carousel-item img {
-        height: 250px !important;
-      }
-      .sidebar {
-        height: auto;
+      #sidebar { /* Added ID for sidebar */
         position: relative;
+        height: auto;
       }
       .navbar-nav {
         flex-direction: row;
         justify-content: space-around;
+      }
+      .carousel-item img {
+        height: 250px !important;
+      }
+    }
+    
+    .sidebar-toggle-button {
+      display: none; /* Hide on larger screens */
+      background-color: var(--main-pink);
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      margin-bottom: 1rem;
+    }
+    @media (max-width: 768px) {
+      .sidebar-toggle-button {
+        display: block; /* Show on smaller screens */
+      }
+      #sidebar {
+        display: none; /* Initially hide sidebar on mobile */
+      }
+      #sidebar.show {
+        display: block; /* Show when toggled */
       }
     }
   </style>
@@ -226,14 +248,9 @@
       <a class="navbar-brand" href="#">
         <i class="fas fa-spa me-2"></i>Scented Scenery
       </a>
-     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu">
-  <span class="navbar-toggler-icon"></span>
-</button>
-<div class="collapse" id="sidebarMenu">
-  <div class="sidebar">
-    <!-- Sidebar content -->
-  </div>
-</div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <i class="fas fa-bars"></i>
+      </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <div class="navbar-nav ms-auto">
           <a class="nav-link active" href="index.html">Home</a>
@@ -248,7 +265,7 @@
 
   <div class="container-fluid mt-3">
     <div class="row">
-      <div class="col-md-3 sidebar d-none d-md-block" style="background-color: #ffe3ec; margin-bottom:10px;">
+      <div class="col-md-3 sidebar" id="sidebar">
         <h4 class="mb-4"><i class="fas fa-bars me-2"></i>Menu</h4>
         <a href="#"><i class="fas fa-star me-2"></i>New Arrivals</a>
         <a href="#"><i class="fas fa-tags me-2"></i>Brands</a>
@@ -256,8 +273,8 @@
         <a href="#"><i class="fas fa-female me-2"></i>Women</a>
         <a href="#"><i class="fas fa-venus-mars me-2"></i>Unisex</a>
         <a href="#"><i class="fas fa-percent me-2"></i>Deals</a>
-        </div>
-              <div class="mt-5">
+        
+        <div class="mt-5">
           <h5><i class="fas fa-filter me-2"></i>Filter By</h5>
           <div class="form-check mt-3">
             <input class="form-check-input" type="checkbox" id="floral">
@@ -279,6 +296,7 @@
             <input class="form-check-input" type="checkbox" id="fresh">
             <label class="form-check-label" for="fresh">Fresh</label>
           </div>
+        </div>
       </div>
       
       <div class="col-md-9">
@@ -368,7 +386,7 @@
                    class="product-img"
                    alt="Prada Candy perfume">
               <div class="product-body">
-                <h5 class="product-title">Prada Candy Eau de parfum</h5>
+                <h5 class="product-title">Prada Candy</h5>
                 <p class="text-muted">Sweet fragrance with caramel and vanilla</p>
                 <p class="price">P739.99</p>
                 <button class="btn btn-pink">Add to Cart</button>
@@ -402,12 +420,22 @@
     </div>
   </div>
 
+  <button class="sidebar-toggle-button" onclick="toggleSidebar()">
+    <i class="fas fa-bars"></i> Menu
+  </button>
+
   <footer class="text-center mt-5 py-4" style="background-color: #fff; border-top: 1px solid #ddd;">
-  <p>&copy; 2023 Scented Scenery Shop. All rights reserved.</p>
-  <a href="privacy.html">Privacy Policy</a> | 
-  <a href="terms.html">Terms of Service</a>
-</footer>
-  
+    <p>&copy; 2023 Scented Scenery Shop. All rights reserved.</p>
+    <a href="privacy.html">Privacy Policy</a> | 
+    <a href="terms.html">Terms of Service</a>
+  </footer>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('show');
+    }
+  </script>
 </body>
 </html>
