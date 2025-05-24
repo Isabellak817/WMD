@@ -239,6 +239,29 @@
       #sidebar.show {
         display: block; /* Show when toggled */
       }
+      #mobileMenu{
+        display: none; /* Hide by default */
+        background-color: var(--pale-pink);
+        padding: 1rem;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      #mobileMenu.show {
+        display: block;
+      }
+      #mobileMenu a {
+        display: block;
+        padding: 0.5rem 0;
+        text-decoration: none;
+        color: #333;
+      }
+      #mobileMenu a:hover {
+        color: var(--main-pink);
+      }
+      @media (min-width: 768px) {
+        #mobileMenu {
+          display: none; /* Hide on larger screens */
+        }
     }
   </style>
 </head>
