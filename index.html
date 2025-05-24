@@ -268,15 +268,22 @@
   <div class="container-fluid mt-3">
     <div class="row">
       <!-- Sidebar/Menu -->
-      <div class="col-md-3 mb-3">
-        <div id="sidebar" class="d-flex flex-wrap justify-content-center">
-          <a href="#"><i class="fas fa-star me-2"></i>New Arrivals</a>
-          <a href="#"><i class="fas fa-tags me-2"></i>Brands</a>
-          <a href="#"><i class="fas fa-male me-2"></i>Men</a>
-          <a href="#"><i class="fas fa-female me-2"></i>Women</a>
-          <a href="#"><i class="fas fa-venus-mars me-2"></i>Unisex</a>
-          <a href="#"><i class="fas fa-percent me-2"></i>Deals</a>
-        </div>
+<div class="col-md-3 mb-3">
+  <button class="btn btn-pink w-100 d-md-none mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu">
+    Browse Categories
+  </button>
+  <div id="sidebarMenu" class="collapse d-md-block">
+    <div id="sidebar" class="d-flex flex-column align-items-start">
+      <a href="#"><i class="fas fa-star me-2"></i>New Arrivals</a>
+      <a href="#"><i class="fas fa-tags me-2"></i>Brands</a>
+      <a href="#"><i class="fas fa-male me-2"></i>Men</a>
+      <a href="#"><i class="fas fa-female me-2"></i>Women</a>
+      <a href="#"><i class="fas fa-venus-mars me-2"></i>Unisex</a>
+      <a href="#"><i class="fas fa-percent me-2"></i>Deals</a>
+    </div>
+  </div>
+</div>
+
       </div>
 
       <!-- Main Section -->
