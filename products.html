@@ -17,18 +17,20 @@
       margin: 0; /* Remove default body margin */
       padding: 0; /* Remove default body padding */
     }
-
-    .navbar .nav-link {
-      background-color: hotpink;
-      color: white;
-      margin-right: 0.5rem;
-      border-radius: 0.25rem;
-      padding: 0.5rem 1rem;
+ .navbar a {
+      color: var(--main-pink) !important; /* Use variable for consistent pink */
       font-weight: bold;
+      transition: all 0.3s;
     }
 
-    .navbar .nav-link:hover {
-      background-color: deeppink;
+    .navbar a:hover {
+      color: var(--dark-pink) !important; /* Darker pink on hover */
+      transform: translateY(-2px);
+    }
+
+    .navbar-brand {
+      font-size: 1.8rem;
+      font-family: 'Brush Script MT', cursive;
     }
 
     .text-pink {
