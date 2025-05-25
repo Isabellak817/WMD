@@ -23,10 +23,9 @@
       background-attachment: fixed;
       min-height: 100vh;
       display: flex;
-      flex-direction: column; /* Changed to column to allow footer to stick to bottom and content flow */
-      /* Removed justify-content and align-items from body to allow content to flow from top */
+      flex-direction: column; /* Main flex container for header, content, footer */
       margin: 0;
-      padding: 0; /* Remove padding from body, let content containers handle it */
+      padding: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       position: relative;
       overflow-y: auto;
@@ -84,6 +83,16 @@
       background-color: deeppink; /* Darker pink on hover */
     }
 
+    /* Main content wrapper to center the form */
+    .main-content-wrapper {
+      display: flex;
+      flex-grow: 1; /* Allows this wrapper to take all available vertical space */
+      justify-content: center; /* Center horizontally */
+      align-items: center; /* Center vertically */
+      padding: 20px; /* Add padding around the form for responsiveness */
+      position: relative; /* Ensure it's above the body::before overlay */
+      z-index: 2;
+    }
 
     .login-form-container {
       background-color: rgba(255, 255, 255, 0.98);
@@ -93,11 +102,10 @@
       width: 100%;
       max-width: 480px;
       text-align: center;
-      position: relative;
+      position: relative; /* Ensure it's above the body::before overlay */
       z-index: 2;
       border: 1px solid var(--light-pink);
-      margin-top: auto; /* Push form down from navbar */
-      margin-bottom: auto; /* Push form up from footer */
+      /* Removed margin-top: auto; and margin-bottom: auto; as centering is handled by parent */
     }
 
     .login-form-container h1 {
@@ -205,6 +213,9 @@
       body {
         padding: 0; /* Remove body padding on small screens as navbar and form have their own */
       }
+      .main-content-wrapper {
+        padding: 15px; /* Adjust padding for wrapper on small screens */
+      }
       .login-form-container {
         padding: 1.8rem;
         border-radius: 10px;
@@ -252,21 +263,23 @@
     </div>
   </nav>
 
-  <div class="login-form-container">
-    <h1>Welcome Back to Your Scented Journey</h1>
-    <form id="loginForm">
-      <div class="mb-3">
-        <label for="emailAddress" class="form-label">Email Address</label>
-        <input type="email" class="form-control" id="emailAddress" placeholder="Your registered email" required>
-      </div>
-      <div class="mb-3">
-        <label for="password" class="form-label">Password</label>
-        <input type="password" class="form-control" id="password" placeholder="Your password" required>
-      </div>
-      <button type="submit" class="btn btn-login">Log In</button>
-      <div id="loginSubmissionMessage" class="submission-message">Login successful! Redirecting...</div>
-    </form>
-    <p class="signup-link">Don't have an account yet? <a href="signup.html">Sign Up here</a></p>
+  <div class="main-content-wrapper">
+    <div class="login-form-container">
+      <h1>Welcome Back to Your Scented Journey</h1>
+      <form id="loginForm">
+        <div class="mb-3">
+          <label for="emailAddress" class="form-label">Email Address</label>
+          <input type="email" class="form-control" id="emailAddress" placeholder="Your registered email" required>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" placeholder="Your password" required>
+        </div>
+        <button type="submit" class="btn btn-login">Log In</button>
+        <div id="loginSubmissionMessage" class="submission-message">Login successful! Redirecting...</div>
+      </form>
+      <p class="signup-link">Don't have an account yet? <a href="signup.html">Sign Up here</a></p>
+    </div>
   </div>
 
   <footer class="text-center py-4">
@@ -283,9 +296,6 @@
     loginForm.addEventListener('submit', function(event) {
       event.preventDefault(); // Prevent default form submission
 
-      // In a real application, you would send this data to a server for authentication.
-      // For this front-end only example, we'll simulate success.
-
       // Display success message
       loginSubmissionMessage.style.display = 'block';
 
@@ -300,3 +310,4 @@
   </script>
 </body>
 </html>
+
