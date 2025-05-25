@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Share Your Feedback | Scented Scenery</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    :root {
+      --main-pink: #e91e63; /* Deeper, richer pink */
+      --light-pink: #f8bbd0; /* Slightly deeper light pink */
+      --pale-pink: #fce4ec; /* Slightly deeper pale pink */
+      --dark-pink: #c2185b; /* Even deeper pink for hover/accents */
+      --text-color: #333; /* Darker text for contrast */
+      --secondary-text-color: #666;
+    }
+
+    body {
+      background-image: url('https://i.pinimg.com/736x/a6/39/b2/a639b2ed0cc4bd36ccfe64653652220e.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column; /* Allow content to stack vertically */
+      justify-content: center; /* Center content vertically */
+      align-items: center; /* Center content horizontally */
+      margin: 0;
+      padding: 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      position: relative;
+      overflow-y: auto; /* Allow scrolling if content is too tall */
+    }
+
+    /* Background overlay for readability */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.6); /* Slightly more opaque overlay */
+      z-index: 1;
+    }
+
+    .feedback-form-container {
+      background-color: rgba(255, 255, 255, 0.98); /* Almost opaque white form background */
+      padding: 3rem; /* Increased padding */
+      border-radius: 20px; /* More rounded corners */
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* More prominent shadow */
+      width: 100%;
+      max-width: 600px; /* Wider for feedback text area */
+      text-align: center;
+      position: relative;
+      z-index: 2;
+      border: 1px solid var(--light-pink); /* Subtle border */
+      margin-top: 2rem; /* Space from top if not perfectly centered */
+      margin-bottom: 2rem; /* Space from bottom if not perfectly centered */
+    }
+
+    .feedback-form-container h1 {
+      color: var(--main-pink);
+      margin-bottom: 1.5rem; /* Space below heading */
+      font-size: 2.8rem; /* Larger heading */
+      font-weight: bold;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.05); /* Subtle text shadow */
+    }
+
+    .feedback-form-container p.lead {
+      color: var(--secondary-text-color);
+      font-size: 1.1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .form-label {
+      font-weight: bold;
+      color: var(--text-color);
+      text-align: left;
+      width: 100%;
+      margin-bottom: 0.6rem;
+    }
+
+    .form-control {
+      border-radius: 0.75rem;
+      border: 2px solid var(--light-pink);
+      padding: 0.9rem 1.2rem;
+      font-size: 1.05rem;
+      margin-bottom: 1.8rem;
+      box-shadow: inset 0 2px 5px rgba(0,0,0,0.08);
+      transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .form-control:focus {
+      border-color: var(--main-pink);
+      box-shadow: 0 0 0 0.3rem rgba(233, 30, 99, 0.3);
+      outline: 0;
+    }
+
+    textarea.form-control {
+      min-height: 150px; /* Tall enough for feedback */
+      resize: vertical; /* Allow vertical resizing */
+    }
+
+    .btn-submit {
+      background: linear-gradient(135deg, var(--main-pink) 0%, var(--dark-pink) 100%);
+      color: white;
+      border: none;
+      padding: 1rem 2.5rem;
+      border-radius: 0.75rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+      width: 100%;
+      margin-top: 1.5rem;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-submit:hover {
+      background: linear-gradient(135deg, var(--dark-pink) 0%, var(--main-pink) 100%);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      color: white;
+    }
+
+    .note-text {
+        font-size: 0.9rem;
+        color: #888;
+        margin-top: 1.5rem;
+    }
+
+    footer {
+        width: 100%;
+        position: relative; /* Position relative to allow z-index to work */
+        z-index: 2; /* Ensure footer is above overlay */
+        background-color: #fff;
+        border-top: 1px solid #ddd;
+        text-align: center;
+        padding: 1.5rem 0;
+        margin-top: auto; /* Pushes footer to the bottom */
+    }
+
+    footer p, footer a {
+        color: #555;
+        text-decoration: none;
+        font-size: 0.9rem;
+    }
+
+    footer a:hover {
+        color: var(--main-pink);
+        text-decoration: underline;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .feedback-form-container {
+        padding: 2rem;
+        max-width: 90%;
+      }
+      .feedback-form-container h1 {
+        font-size: 2.2rem;
+      }
+      .feedback-form-container p.lead {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+      }
+      .form-control {
+        padding: 0.7rem 1rem;
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+      }
+      .btn-submit {
+        padding: 0.9rem 2rem;
+        font-size: 1.1rem;
+      }
+      footer {
+        padding: 1rem 0;
+      }
+    }
+
+    @media (max-width: 576px) {
+      body {
+        padding: 15px;
+      }
+      .feedback-form-container {
+        padding: 1.5rem;
+        border-radius: 10px;
+      }
+      .feedback-form-container h1 {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+      }
+      .form-control {
+        margin-bottom: 1rem;
+      }
+      .note-text {
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="feedback-form-container">
+    <h1><i class="fas fa-heart me-2"></i>Share Your Scented Thoughts!</h1>
+    <p class="lead">Your insights help us craft an even more enchanting experience for you. We'd love to hear your feedback!</p>
+    <form action="#" method="POST"> <div class="mb-3">
+        <label for="feedbackName" class="form-label">Your Name (Optional)</label>
+        <input type="text" class="form-control" id="feedbackName" placeholder="e.g., Jasmine Bloom">
+      </div>
+      <div class="mb-3">
+        <label for="feedbackEmail" class="form-label">Your Email (Optional)</label>
+        <input type="email" class="form-control" id="feedbackEmail" placeholder="e.g., feedback@example.com">
+        <div class="form-text text-start text-muted">We'll only use this to respond if needed.</div>
+      </div>
+      <div class="mb-3">
+        <label for="feedbackMessage" class="form-label">Your Message</label>
+        <textarea class="form-control" id="feedbackMessage" rows="6" placeholder="Tell us about your experience, suggestions, or anything you'd like to share!" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-submit">Submit Your Feedback</button>
+      <p class="note-text">Please note: This is a front-end form. For actual submission, a backend service is required.</p>
+    </form>
+  </div>
+
+  <footer class="text-center py-4">
+    <p>© Ms.Grad's🎀 Scented Scenery Shop. All rights reserved.</p>
+    <a href="privacy.html">Privacy Policy</a> |
+    <a href="terms.html">Terms of Service</a>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
