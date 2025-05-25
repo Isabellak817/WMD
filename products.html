@@ -100,12 +100,18 @@
       color: deeppink; /* Product title color */
       font-weight: bold;
       margin-bottom: 0.5rem;
+      /* Ensure text wraps if it's long, added for robustness */
+      white-space: normal;
+      word-wrap: break-word;
     }
 
     .product-card .card-text {
       font-size: 0.9rem;
       color: #555; /* Description text color */
       margin-bottom: 1rem;
+      /* Ensure text wraps if it's long, added for robustness */
+      white-space: normal;
+      word-wrap: break-word;
     }
 
     .product-card .price {
@@ -170,8 +176,9 @@
   <section class="products-section">
     <div class="container py-5">
       <h1 class="text-pink text-center mb-5">✨ Our Exquisite Perfume Collection ✨</h1>
-       <h2 class="text-pink text-center mt-5 mb-4">The feminine allure🧚🏽‍♀️</h2>
-       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center">
+
+      <h2 class="text-pink text-center mt-5 mb-4">💖 The Feminine Allure 🧚🏽‍♀️</h2>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center mb-5">
         <div class="col">
           <div class="card product-card h-100">
             <img src="https://ololoexpress.com/wp-content/uploads/classified-listing/2024/09/Victorias-Secret-Midnight-Bloom-Fragrance-Mist-250-ml.jpeg" class="card-img-top" alt="Midnight Bloom Eau de Parfum">
@@ -213,7 +220,10 @@
             </div>
           </div>
         </div>
+      </div>
 
+      <h2 class="text-pink text-center mt-5 mb-4">💙 The Masculine Mystique 🖤</h2>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center">
         <div class="col">
           <div class="card product-card h-100">
             <img src="https://f.fcdn.app/imgs/7d9fa6/tienda.soysantander.com.uy/comp/754f/original/catalogo/FRBA96652_65196652_1/460_460/fragancia-masculina-antonio-banderas-the-icon-edp-100-ml.jpg" class="card-img-top" alt="Urban Oud">
@@ -227,8 +237,7 @@
             </div>
           </div>
         </div>
-<h2 class="text-pink text-center mt-5 mb-4">The masculine mystique🖤</h2>
-      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center">
+
         <div class="col">
           <div class="card product-card h-100">
             <img src="https://fimgs.net/photogram/p180/45/q1/wrRxa1le1L8vGiGK.jpg" class="card-img-top" alt="Bleu de Chanel">
@@ -236,8 +245,7 @@
               <h5 class="card-title">Bleu de Chanel</h5>
               <p class="card-text">A captivating blend of fresh citrus, aromatic cedar, and warm amber notes, creating a powerful and sophisticated aura for the discerning gentleman.</p>
               <div class="mt-auto">
-                <p class="price">$55.00</p>
-                <a href="#" class="btn btn-add-to-cart w-100">Add to Cart</a>
+                <p class="price">$95.00</p> <a href="#" class="btn btn-add-to-cart w-100">Add to Cart</a>
               </div>
             </div>
           </div>
@@ -250,7 +258,7 @@
               <h5 class="card-title">Obsidian Woods</h5>
               <p class="card-text">Command attention with this bold and mysterious scent. A powerful fusion of smoked oud, rich leather, and a touch of spicy saffron, embodying rugged sophistication.</p>
               <div class="mt-auto">
-                <p class="price">$45.00</p>
+                <p class="price">$85.00</p>
                 <a href="#" class="btn btn-add-to-cart w-100">Add to Cart</a>
               </div>
             </div>
@@ -269,3 +277,4 @@
   </footer>
 </body>
 </html>
+
