@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aura collection🎀 | Scented Scenery Shop</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <style>
+    body {
+      background-image: url('https://m.media-amazon.com/images/I/81Liu9F1liL._AC_UF1000,1000_QL80_.jpg');
+      background-repeat: no-repeat; /* Prevents the image from repeating */
+      background-size: cover; /* Resizes the background image to cover the entire container */
+      background-attachment: fixed; /* Makes the background image fixed when scrolling */
+      min-height: 100vh; /* Ensures body takes at least full viewport height */
+      display: flex; /* Use flexbox to enable sticky footer */
+      flex-direction: column; /* Stack children vertically */
+      margin: 0; /* Remove default body margin */
+      padding: 0; /* Remove default body padding */
+    }
+
+    .navbar .nav-link {
+      background-color: hotpink;
+      color: white;
+      margin-right: 0.5rem;
+      border-radius: 0.25rem;
+      padding: 0.5rem 1rem;
+      font-weight: bold;
+    }
+
+    .navbar .nav-link:hover {
+      background-color: deeppink;
+    }
+
+    .text-pink {
+      color: deeppink;
+    }
+
+    .products-section {
+      padding: 4rem 0; /* Vertical padding, 0 horizontal for full width cards if desired */
+      color: deeppink; /* Default text color for this section */
+      flex-grow: 1; /* Allows this section to expand and push footer down */
+      position: relative; /* Needed for the ::before pseudo-element */
+    }
+
+    .products-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.5); /* White overlay for better text contrast */
+      z-index: 1; /* Ensures the overlay is on top of the image */
+    }
+
+    /* Ensures content is above the overlay */
+    .products-section .container {
+      position: relative;
+      z-index: 2; /* Text and cards above overlay */
+    }
+
+    /* Media query for smaller screens */
+    @media (max-width: 768px) {
+      .products-section {
+        padding: 2rem 0; /* Adjust padding for smaller screens */
+      }
+    }
+
+    h1, h2 {
+      margin: 1rem 0; /* Spacing for headings */
+    }
+
+    /* Product Card Specific Styles */
+    .product-card {
+      border: none; /* Remove default Bootstrap card border */
+      border-radius: 0.5rem; /* Rounded corners for cards */
+      overflow: hidden; /* Ensures image corners match card corners */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+      transition: transform 0.2s ease-in-out; /* Smooth hover effect */
+      background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white card background */
+      color: #333; /* Default text color for card content */
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px); /* Lift card slightly on hover */
+    }
+
+    .product-card .card-img-top {
+      height: 200px; /* Fixed height for product images */
+      object-fit: cover; /* Ensures images cover the area without distortion */
+      border-top-left-radius: 0.5rem;
+      border-top-right-radius: 0.5rem;
+    }
+
+    .product-card .card-body {
+      padding: 1.5rem;
+    }
+
+    .product-card .card-title {
+      color: deeppink; /* Product title color */
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .product-card .card-text {
+      font-size: 0.9rem;
+      color: #555; /* Description text color */
+      margin-bottom: 1rem;
+    }
+
+    .product-card .price {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: hotpink; /* Price color */
+      margin-bottom: 1rem;
+    }
+
+    .product-card .btn-add-to-cart {
+      background-color: hotpink;
+      border-color: hotpink;
+      color: white;
+      font-weight: bold;
+      border-radius: 0.25rem;
+      transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+    }
+
+    .product-card .btn-add-to-cart:hover {
+      background-color: deeppink;
+      border-color: deeppink;
+    }
+
+    footer {
+      background-color: #fff; /* White background for the footer */
+      border-top: 1px solid #ddd;
+      padding: 1rem 0; /* Add some padding to the footer itself */
+      text-align: center;
+      width: 100%; /* Ensure footer spans full width */
+      margin-top: auto; /* Pushes the footer to the bottom using flexbox */
+      color: #555; /* Default color for footer text */
+    }
+
+    footer p {
+      margin-bottom: 0.5rem; /* Space below copyright text */
+    }
+
+    footer a {
+      color: hotpink; /* Link color */
+      text-decoration: none; /* No underline */
+      margin: 0 0.5rem; /* Space between links */
+    }
+
+    footer a:hover {
+      text-decoration: underline; /* Underline on hover */
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-light border-bottom py-3">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-pink" href="#">Scented Scenery</a>
+      <div class="navbar-nav">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="about.html">About Us</a>
+        <a class="nav-link" href="products.html">Products</a>
+        <a class="nav-link" href="contact.html">Contact Us</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="products-section">
+    <div class="container py-5">
+      <h1 class="text-pink text-center mb-5">✨ Our Scented Collection ✨</h1>
+
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center">
+        <div class="col">
+          <div class="card product-card h-100">
+            <img src="https://placehold.co/400x200/FFC0CB/FFFFFF?text=Product+1" class="card-img-top" alt="Scented Candle - Lavender Bliss">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Lavender Bliss Candle</h5>
+              <p class="card-text">Relax with the soothing aroma of fresh lavender fields. Hand-poured with natural soy wax.</p>
+              <div class="mt-auto"> <p class="price">$24.99</p>
+                <a href="#" class="btn btn-add-to-cart w-100">Add to Cart</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card product-card h-100">
+            <img src="https://placehold.co/400x200/F08080/FFFFFF?text=Product+2" class="card-img-top" alt="Reed Diffuser - Ocean Breeze">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Ocean Breeze Diffuser</h5>
+              <p class="card-text">Bring the refreshing scent of the sea into your home with this elegant reed diffuser.</p>
+              <div class="mt-auto">
+                <p class="price">$29.50</p>
+                <a href="#" class="btn btn-add-to-cart w-100">Add to Cart</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card product-card h-100">
+            <img src="https://placehold.co/400x200/FF69B4/FFFFFF?text=Product+3" class="card-img-top" alt="Room Spray - Rose Garden">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Rose Garden Room Spray</h5>
+              <p class="card-text">A delicate and captivating floral scent that fills your space with the essence of a blooming rose garden.</p>
+              <div class="mt-auto">
+                <p class="price">$18.00</p>
+                <a href="#" class="btn btn-add-to-cart w-100">Add to Cart</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card product-card h-100">
+            <img src="https://placehold.co/400x200/EE82EE/FFFFFF?text=Product+4" class="card-img-top" alt="Wax Melts - Vanilla Bean">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Vanilla Bean Wax Melts</h5>
+              <p class="card-text">Sweet and comforting vanilla bean wax melts for your warmer. Long-lasting fragrance.</p>
+              <div class="mt-auto">
+                <p class="price">$12.99</p>
+                <a href="#" class="btn btn-add-to-cart w-100">Add to Cart</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card product-card h-100">
+            <img src="https://placehold.co/400x200/DA70D6/FFFFFF?text=Product+5" class="card-img-top" alt="Car Diffuser - Citrus Burst">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Citrus Burst Car Diffuser</h5>
+              <p class="card-text">Energize your commute with the zesty and refreshing scent of citrus fruits.</p>
+              <div class="mt-auto">
+                <p class="price">$15.00</p>
+                <a href="#" class="btn btn-add-to-cart w-100">Add to Cart</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card product-card h-100">
+            <img src="https://placehold.co/400x200/C71585/FFFFFF?text=Product+6" class="card-img-top" alt="Essential Oil Blend - Sleep Well">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Sleep Well Essential Oil</h5>
+              <p class="card-text">A calming blend of essential oils designed to promote relaxation and restful sleep.</p>
+              <div class="mt-auto">
+                <p class="price">$22.00</p>
+                <a href="#" class="btn btn-add-to-cart w-100">Add to Cart</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="text-center">
+    <p>© Ms.Grad's🎀 Scented Scenery Shop. All rights reserved.</p>
+    <div>
+      <a href="privacy.html">Privacy Policy</a> |
+      <a href="terms.html">Terms of Service</a>
+    </div>
+  </footer>
+</body>
+</html>
+
