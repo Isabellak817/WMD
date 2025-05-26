@@ -1,320 +1,317 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sign Up for Your Scented Journey | Scented Scenery</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <style>
-    /* Define your color variables FIRST and make sure they are correct */
-    :root {
-      --main-pink: #e91e63; /* Deeper, richer pink */
-      --light-pink: #f8bbd0; /* Slightly deeper light pink */
-      --pale-pink: #fce4ec; /* Slightly deeper pale pink */
-      --dark-pink: #c2185b; /* Even deeper pink for hover/accents */
-      --text-color: #333; /* Darker text for contrast */
-      --secondary-text-color: #666;
-    }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up for Your Scented Journey | Scented Scenery</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    :root {
+      --main-pink: #e91e63; /* Deeper, richer pink */
+      --light-pink: #f8bbd0; /* Slightly deeper light pink */
+      --pale-pink: #fce4ec; /* Slightly deeper pale pink */
+      --dark-pink: #c2185b; /* Even deeper pink for hover/accents */
+      --text-color: #333; /* Darker text for contrast */
+      --secondary-text-color: #666;
+    }
 
-    body {
-      background-image: url('https://i.pinimg.com/736x/a6/39/b2/a639b2ed0cc4bd36ccfe64653652220e.jpg');
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-attachment: fixed;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      position: relative;
-      overflow-y: auto;
-    }
+    body {
+      background-image: url('https://i.pinimg.com/736x/a6/39/b2/a639b2ed0cc4bd36ccfe64653652220e.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column; /* Main flex container for header, content, footer */
+      margin: 0;
+      padding: 0; /* Remove padding from body, let content containers handle it */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      position: relative;
+      overflow-y: auto;
+    }
 
-    body::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(255, 255, 255, 0.6);
-      z-index: 1;
-    }
+    /* Background overlay for readability */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.6); /* Slightly more opaque overlay */
+      z-index: 1;
+    }
 
-    .navbar {
-      background-color: beige !important;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      position: sticky;
-      top: 0;
-      width: 100%;
-      z-index: 10;
-    }
+    .navbar {
+      background-color: beige !important; /* Ensure navbar background is beige */
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: sticky; /* Make navbar sticky */
+      top: 0; /* Stick to the top */
+      width: 100%; /* Full width */
+      z-index: 10; /* Ensure it's above other content and overlay */
+    }
 
-    /* VERY AGGRESSIVE STYLES FOR NAVBAR LINKS AND BRAND */
+    .navbar a {
+      color: var(--main-pink) !important;
+      font-weight: bold;
+      transition: all 0.3s;
+    }
 
-    /* For the brand/logo */
-    .navbar-brand {
-      font-size: 1.8rem;
-      font-family: 'Brush Script MT', cursive;
-      color: #e91e63 !important; /* Direct hex code with !important */
-      transition: all 0.3s;
-    }
+    .navbar a:hover {
+      color: var(--dark-pink) !important;
+      transform: translateY(-2px);
+    }
 
-    .navbar-brand:hover {
-      color: #c2185b !important; /* Direct hex code for hover */
-      transform: translateY(-2px);
-    }
+    .navbar-brand {
+      font-size: 1.8rem;
+      font-family: 'Brush Script MT', cursive;
+    }
 
-    /* For all navigation links (Home, About Us, etc.) */
-    .navbar .nav-link {
-      color: #e91e63 !important; /* Direct hex code with !important */
-      font-weight: bold;
-      transition: all 0.3s;
-      background-color: transparent !important; /* No background */
-      padding: 0.5rem 1rem !important; /* Ensure standard padding */
-      margin-right: 0 !important; /* Remove any stray margin */
-      text-decoration: none !important; /* No underline unless specifically added */
-    }
+    /* Specific styling for the pink button in the navbar */
+    .navbar .nav-link {
+      background-color: hotpink; /* Specific pink background */
+      color: white !important; /* White text */
+      margin-right: 0.5rem; /* Space between links */
+      padding: 0.5rem 1rem; /* Padding for button appearance */
+      font-weight: bold;
+    }
 
-    .navbar .nav-link:hover {
-      color: #c2185b !important; /* Direct hex code for hover */
-      background-color: transparent !important; /* No background on hover */
-      transform: translateY(-2px) !important; /* Lift effect on hover */
-      text-decoration: none !important; /* No underline unless specifically added */
-    }
+    .navbar .nav-link:hover {
+      background-color: deeppink; /* Darker pink on hover */
+    }
 
-    /* FOR THE HEADING "Sign Up for Your Scented Journey" */
-    .account-form-container h1 {
-      color: #e91e63 !important; /* Direct hex code with !important */
-      margin-bottom: 2.5rem;
-      font-size: 2.8rem;
-      font-weight: bold;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
-    }
+    /* Main content wrapper to center the form */
+    .main-content-wrapper {
+      display: flex;
+      flex-grow: 1; /* Allows this wrapper to take all available vertical space */
+      justify-content: center; /* Center horizontally */
+      align-items: center; /* Center vertically */
+      padding: 20px; /* Add padding around the form for responsiveness */
+      position: relative; /* Ensure it's above the body::before overlay */
+      z-index: 2;
+    }
 
-    /* Rest of your existing CSS (should be fine, but included for completeness) */
-    .main-content-wrapper {
-      display: flex;
-      flex-grow: 1;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-      position: relative;
-      z-index: 2;
-    }
+    .account-form-container {
+      background-color: rgba(255, 255, 255, 0.98); /* Almost opaque white form background */
+      padding: 3rem; /* Increased padding */
+      border-radius: 20px; /* More rounded corners */
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* More prominent shadow */
+      width: 100%;
+      max-width: 480px; /* Slightly wider form */
+      text-align: center;
+      position: relative;
+      z-index: 2;
+      border: 1px solid var(--light-pink); /* Subtle border */
+      /* Removed margin-top: auto; and margin-bottom: auto; as centering is handled by parent */
+    }
 
-    .account-form-container {
-      background-color: rgba(255, 255, 255, 0.98);
-      padding: 3rem;
-      border-radius: 20px;
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-      width: 100%;
-      max-width: 480px;
-      text-align: center;
-      position: relative;
-      z-index: 2;
-      border: 1px solid var(--light-pink);
-    }
+    .account-form-container h1 {
+      color: var(--main-pink);
+      margin-bottom: 2.5rem; /* More space below heading */
+      font-size: 2.8rem; /* Larger heading */
+      font-weight: bold;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.05); /* Subtle text shadow */
+    }
 
-    .form-label {
-      font-weight: bold;
-      color: var(--text-color);
-      text-align: left;
-      width: 100%;
-      margin-bottom: 0.6rem;
-    }
+    .form-label {
+      font-weight: bold;
+      color: var(--text-color); /* Darker label text */
+      text-align: left;
+      width: 100%;
+      margin-bottom: 0.6rem; /* Slightly more space */
+    }
 
-    .form-control {
-      border-radius: 0.75rem;
-      border: 2px solid var(--light-pink);
-      padding: 0.9rem 1.2rem;
-      font-size: 1.05rem;
-      margin-bottom: 1.8rem;
-      box-shadow: inset 0 2px 5px rgba(0,0,0,0.08);
-      transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    }
+    .form-control {
+      border-radius: 0.75rem; /* More rounded inputs */
+      border: 2px solid var(--light-pink); /* Thicker, softer border */
+      padding: 0.9rem 1.2rem; /* More padding in inputs */
+      font-size: 1.05rem;
+      margin-bottom: 1.8rem; /* More space between inputs */
+      box-shadow: inset 0 2px 5px rgba(0,0,0,0.08); /* Deeper inner shadow */
+      transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
 
-    .form-control:focus {
-      border-color: var(--main-pink);
-      box-shadow: 0 0 0 0.3rem rgba(233, 30, 99, 0.3);
-      outline: 0;
-    }
+    .form-control:focus {
+      border-color: var(--main-pink);
+      box-shadow: 0 0 0 0.3rem rgba(233, 30, 99, 0.3); /* Stronger focus glow */
+      outline: 0;
+    }
 
-    .btn-signup {
-      background: linear-gradient(135deg, var(--main-pink) 0%, var(--dark-pink) 100%);
-      color: white;
-      border: none;
-      padding: 1rem 2.5rem;
-      font-size: 1.2rem;
-      font-weight: bold;
-      width: 100%;
-      margin-top: 1.5rem;
-      transition: all 0.3s ease-in-out;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    }
+    .btn-signup {
+      background: linear-gradient(135deg, var(--main-pink) 0%, var(--dark-pink) 100%); /* Gradient background */
+      color: white;
+      border: none;
+      padding: 1rem 2.5rem; /* More padding */
+      font-size: 1.2rem; /* Larger font */
+      font-weight: bold;
+      width: 100%;
+      margin-top: 1.5rem; /* More space above button */
+      transition: all 0.3s ease-in-out; /* Smooth transition for all properties */
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Initial button shadow */
+    }
 
-    .btn-signup:hover {
-      background: linear-gradient(135deg, var(--dark-pink) 0%, var(--main-pink) 100%);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-      color: white;
-    }
+    .btn-signup:hover {
+      background: linear-gradient(135deg, var(--dark-pink) 0%, var(--main-pink) 100%); /* Reverse gradient on hover */
+      transform: translateY(-3px); /* More pronounced lift */
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+      color: white;
+    }
 
-    .login-link {
-      margin-top: 2rem;
-      font-size: 1rem;
-      color: var(--secondary-text-color);
-    }
+    .login-link {
+      margin-top: 2rem; /* More space below button */
+      font-size: 1rem;
+      color: var(--secondary-text-color);
+    }
 
-    .login-link a {
-      color: var(--main-pink);
-      font-weight: bold;
-      text-decoration: none;
-      transition: color 0.2s ease-in-out, text-decoration 0.2s ease-in-out;
-    }
+    .login-link a {
+      color: var(--main-pink);
+      font-weight: bold;
+      text-decoration: none;
+      transition: color 0.2s ease-in-out, text-decoration 0.2s ease-in-out;
+    }
 
-    .login-link a:hover {
-      color: var(--dark-pink);
-      text-decoration: underline;
-    }
+    .login-link a:hover {
+      color: var(--dark-pink);
+      text-decoration: underline;
+    }
 
-    .submission-message {
-        color: green;
-        font-weight: bold;
-        margin-top: 1rem;
-        display: none;
-    }
+    .submission-message {
+        color: green;
+        font-weight: bold;
+        margin-top: 1rem;
+        display: none; /* Hidden by default */
+    }
 
-    footer {
-        width: 100%;
-        position: relative;
-        z-index: 2;
-        background-color: #fff;
-        border-top: 1px solid #ddd;
-        text-align: center;
-        padding: 1.5rem 0;
-        margin-top: auto;
-    }
+    footer {
+        width: 100%;
+        position: relative;
+        z-index: 2;
+        background-color: #fff;
+        border-top: 1px solid #ddd;
+        text-align: center;
+        padding: 1.5rem 0;
+        margin-top: auto; /* Pushes footer to the bottom */
+    }
 
-    footer p, footer a {
-        color: #555;
-        text-decoration: none;
-        font-size: 0.9rem;
-    }
+    footer p, footer a {
+        color: #555;
+        text-decoration: none;
+        font-size: 0.9rem;
+    }
 
-    footer a:hover {
-        color: var(--main-pink);
-        text-decoration: underline;
-    }
+    footer a:hover {
+        color: var(--main-pink);
+        text-decoration: underline;
+    }
 
-    @media (max-width: 576px) {
-      body {
-        padding: 0;
-      }
-      .main-content-wrapper {
-        padding: 15px;
-      }
-      .account-form-container {
-        padding: 1.8rem;
-        border-radius: 10px;
-      }
+    /* Responsive adjustments */
+    @media (max-width: 576px) {
+      body {
+        padding: 0; /* Remove body padding on small screens as navbar and form have their own */
+      }
+      .main-content-wrapper {
+        padding: 15px; /* Adjust padding for wrapper on small screens */
+      }
+      .account-form-container {
+        padding: 1.8rem;
+        border-radius: 10px;
+      }
 
-      .account-form-container h1 {
-        font-size: 2.2rem;
-        margin-bottom: 2rem;
-      }
+      .account-form-container h1 {
+        font-size: 2.2rem;
+        margin-bottom: 2rem;
+      }
 
-      .form-control {
-        padding: 0.7rem 1rem;
-        font-size: 0.95rem;
-        margin-bottom: 1.5rem;
-      }
+      .form-control {
+        padding: 0.7rem 1rem;
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+      }
 
-      .btn-signup {
-        padding: 0.9rem 2rem;
-        font-size: 1.1rem;
-      }
+      .btn-signup {
+        padding: 0.9rem 2rem;
+        font-size: 1.1rem;
+      }
 
-      .login-link {
-        margin-top: 1.5rem;
-      }
-    }
-  </style>
+      .login-link {
+        margin-top: 1.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <nav class="navbar navbar-expand-lg sticky-top">
-    <div class="container">
-      <a class="navbar-brand" href="index.html"><i class="fas fa-spa me-2"></i>Scented Scenery</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="signup.html">Sign up</a></li>
-          <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><i class="fas fa-spa me-2"></i>Scented Scenery</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="signup.html">Sign up</a></li>
+          <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-  <div class="main-content-wrapper">
-    <div class="account-form-container">
-      <h1>Sign Up for Your Scented Journey</h1>
-      <form id="signupForm">
-        <div class="mb-3">
-          <label for="fullName" class="form-label">Your Full Name</label>
-          <input type="text" class="form-control" id="fullName" placeholder="Enter your full name here" required>
-        </div>
-        <div class="mb-3">
-          <label for="emailAddress" class="form-label">Email Address</label>
-          <input type="email" class="form-control" id="emailAddress" placeholder="Your email for exclusive offers" required>
-        </div>
-        <div class="mb-3">
-          <label for="password" class="form-label">Password</label>
-          <input type="password" class="form-control" id="password" placeholder="Create a strong password" required>
-        </div>
-        <div class="mb-3">
-          <label for="confirmPassword" class="form-label">Confirm Password</label>
-          <input type="password" class="form-control" id="confirmPassword" placeholder="Re-enter your password" required>
-        </div>
-        <button type="submit" class="btn btn-signup">Sign Up Now</button>
-        <div id="signupSubmissionMessage" class="submission-message">Account created successfully! Redirecting...</div>
-      </form>
-      <p class="login-link">Already part of our fragrant family? <a href="login.html">Log In here</a></p>
-    </div>
-  </div>
+  <div class="main-content-wrapper">
+    <div class="account-form-container">
+      <h1>Sign Up for Your Scented Journey</h1>
+      <form id="signupForm">
+        <div class="mb-3">
+          <label for="fullName" class="form-label">Your Full Name</label>
+          <input type="text" class="form-control" id="fullName" placeholder="Enter your full name here" required>
+        </div>
+        <div class="mb-3">
+          <label for="emailAddress" class="form-label">Email Address</label>
+          <input type="email" class="form-control" id="emailAddress" placeholder="Your email for exclusive offers" required>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" placeholder="Create a strong password" required>
+        </div>
+        <div class="mb-3">
+          <label for="confirmPassword" class="form-label">Confirm Password</label>
+          <input type="password" class="form-control" id="confirmPassword" placeholder="Re-enter your password" required>
+        </div>
+        <button type="submit" class="btn btn-signup">Sign Up Now</button>
+        <div id="signupSubmissionMessage" class="submission-message">Account created successfully! Redirecting...</div>
+      </form>
+      <p class="login-link">Already part of our fragrant family? <a href="login.html">Log In here</a></p>
+    </div>
+  </div>
 
-  <footer class="text-center py-4">
-    <p>© Ms.Grad's🎀 Scented Scenery Shop. All rights reserved.</p>
-    <a href="privacy.html">Privacy Policy</a> |
-    <a href="terms.html">Terms of Service</a>
-  </footer>
+  <footer class="text-center py-4">
+    <p>© Ms.Grad's🎀 Scented Scenery Shop. All rights reserved.</p>
+    <a href="privacy.html">Privacy Policy</a> |
+    <a href="terms.html">Terms of Service</a>
+  </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    const signupForm = document.getElementById('signupForm');
-    const signupSubmissionMessage = document.getElementById('signupSubmissionMessage');
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const signupForm = document.getElementById('signupForm');
+    const signupSubmissionMessage = document.getElementById('signupSubmissionMessage');
 
-    signupForm.addEventListener('submit', function(event) {
-      event.preventDefault(); // Prevent default form submission
+    signupForm.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent default form submission
 
-      // Display success message
-      signupSubmissionMessage.style.display = 'block';
+      // Display success message
+      signupSubmissionMessage.style.display = 'block';
 
-      // Optionally, clear the form fields
-      signupForm.reset();
+      // Optionally, clear the form fields
+      signupForm.reset();
 
-      // Redirect to the products page after a short delay
-      setTimeout(() => {
-        window.location.href = 'index.html'; // Redirect to home page after signup
-      }, 2000); // Redirect after 2 seconds
-    });
-  </script>
+      // Redirect to the products page after a short delay
+      setTimeout(() => {
+        window.location.href = 'index.html'; // Redirect to home page after signup
+      }, 2000); // Redirect after 2 seconds
+    });
+  </script>
 </body>
 </html>
