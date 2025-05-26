@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
+    /* Define your color variables FIRST and make sure they are correct */
     :root {
       --main-pink: #e91e63; /* Deeper, richer pink */
       --light-pink: #f8bbd0; /* Slightly deeper light pink */
@@ -23,15 +24,14 @@
       background-attachment: fixed;
       min-height: 100vh;
       display: flex;
-      flex-direction: column; /* Main flex container for header, content, footer */
+      flex-direction: column;
       margin: 0;
-      padding: 0; /* Remove padding from body, let content containers handle it */
+      padding: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       position: relative;
       overflow-y: auto;
     }
 
-    /* Background overlay for readability */
     body::before {
       content: "";
       position: absolute;
@@ -39,133 +39,131 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(255, 255, 255, 0.6); /* Slightly more opaque overlay */
+      background: rgba(255, 255, 255, 0.6);
       z-index: 1;
     }
 
     .navbar {
-      background-color: beige !important; /* Ensure navbar background is beige */
+      background-color: beige !important;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      position: sticky; /* Make navbar sticky */
-      top: 0; /* Stick to the top */
-      width: 100%; /* Full width */
-      z-index: 10; /* Ensure it's above other content and overlay */
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 10;
     }
 
-    /* General navbar link styling - this will apply to ALL 'a' tags inside navbar */
-    .navbar a {
-      color: var(--main-pink) !important; /* Forces pink color for all links */
-      font-weight: bold;
-      transition: all 0.3s;
-    }
+    /* VERY AGGRESSIVE STYLES FOR NAVBAR LINKS AND BRAND */
 
-    .navbar a:hover {
-      color: var(--dark-pink) !important; /* Darker pink on hover */
-      transform: translateY(-2px);
-    }
-
-    /* Specific styling for the brand/logo to ensure it's pink and has its unique font */
+    /* For the brand/logo */
     .navbar-brand {
       font-size: 1.8rem;
       font-family: 'Brush Script MT', cursive;
-      /* The 'navbar a' rule above already colors it pink, so no need for color here */
+      color: #e91e63 !important; /* Direct hex code with !important */
+      transition: all 0.3s;
     }
 
-    /* Override any button-like styling for nav-links to make them look like plain text links */
+    .navbar-brand:hover {
+      color: #c2185b !important; /* Direct hex code for hover */
+      transform: translateY(-2px);
+    }
+
+    /* For all navigation links (Home, About Us, etc.) */
     .navbar .nav-link {
-      background-color: transparent !important; /* No background color */
-      padding: 0.5rem 1rem !important; /* Standard padding for Bootstrap nav-link, not button padding */
-      margin-right: 0; /* Remove any extra margin if present from old button style */
-      /* Color is already set by .navbar a, so no need to redeclare here */
-      /* font-weight is also set by .navbar a */
+      color: #e91e63 !important; /* Direct hex code with !important */
+      font-weight: bold;
+      transition: all 0.3s;
+      background-color: transparent !important; /* No background */
+      padding: 0.5rem 1rem !important; /* Ensure standard padding */
+      margin-right: 0 !important; /* Remove any stray margin */
+      text-decoration: none !important; /* No underline unless specifically added */
     }
 
     .navbar .nav-link:hover {
+      color: #c2185b !important; /* Direct hex code for hover */
       background-color: transparent !important; /* No background on hover */
-      /* Color is already set by .navbar a:hover */
-      transform: translateY(0) !important; /* Remove any translateY specific to old button hover */
+      transform: translateY(-2px) !important; /* Lift effect on hover */
+      text-decoration: none !important; /* No underline unless specifically added */
     }
 
+    /* FOR THE HEADING "Sign Up for Your Scented Journey" */
+    .account-form-container h1 {
+      color: #e91e63 !important; /* Direct hex code with !important */
+      margin-bottom: 2.5rem;
+      font-size: 2.8rem;
+      font-weight: bold;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+    }
 
-    /* Main content wrapper to center the form */
+    /* Rest of your existing CSS (should be fine, but included for completeness) */
     .main-content-wrapper {
       display: flex;
-      flex-grow: 1; /* Allows this wrapper to take all available vertical space */
-      justify-content: center; /* Center horizontally */
-      align-items: center; /* Center vertically */
-      padding: 20px; /* Add padding around the form for responsiveness */
-      position: relative; /* Ensure it's above the body::before overlay */
+      flex-grow: 1;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      position: relative;
       z-index: 2;
     }
 
     .account-form-container {
-      background-color: rgba(255, 255, 255, 0.98); /* Almost opaque white form background */
-      padding: 3rem; /* Increased padding */
-      border-radius: 20px; /* More rounded corners */
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* More prominent shadow */
+      background-color: rgba(255, 255, 255, 0.98);
+      padding: 3rem;
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
       width: 100%;
-      max-width: 480px; /* Slightly wider form */
+      max-width: 480px;
       text-align: center;
       position: relative;
       z-index: 2;
-      border: 1px solid var(--light-pink); /* Subtle border */
-      /* Removed margin-top: auto; and margin-bottom: auto; as centering is handled by parent */
-    }
-
-    .account-form-container h1 {
-      color: var(--main-pink); /* Ensure heading remains pink */
-      margin-bottom: 2.5rem; /* More space below heading */
-      font-size: 2.8rem; /* Larger heading */
-      font-weight: bold;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.05); /* Subtle text shadow */
+      border: 1px solid var(--light-pink);
     }
 
     .form-label {
       font-weight: bold;
-      color: var(--text-color); /* Darker label text */
+      color: var(--text-color);
       text-align: left;
       width: 100%;
-      margin-bottom: 0.6rem; /* Slightly more space */
+      margin-bottom: 0.6rem;
     }
 
     .form-control {
-      border-radius: 0.75rem; /* More rounded inputs */
-      border: 2px solid var(--light-pink); /* Thicker, softer border */
-      padding: 0.9rem 1.2rem; /* More padding in inputs */
+      border-radius: 0.75rem;
+      border: 2px solid var(--light-pink);
+      padding: 0.9rem 1.2rem;
       font-size: 1.05rem;
-      margin-bottom: 1.8rem; /* More space between inputs */
-      box-shadow: inset 0 2px 5px rgba(0,0,0,0.08); /* Deeper inner shadow */
+      margin-bottom: 1.8rem;
+      box-shadow: inset 0 2px 5px rgba(0,0,0,0.08);
       transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     }
 
     .form-control:focus {
       border-color: var(--main-pink);
-      box-shadow: 0 0 0 0.3rem rgba(233, 30, 99, 0.3); /* Stronger focus glow */
+      box-shadow: 0 0 0 0.3rem rgba(233, 30, 99, 0.3);
       outline: 0;
     }
 
     .btn-signup {
-      background: linear-gradient(135deg, var(--main-pink) 0%, var(--dark-pink) 100%); /* Gradient background */
+      background: linear-gradient(135deg, var(--main-pink) 0%, var(--dark-pink) 100%);
       color: white;
       border: none;
-      padding: 1rem 2.5rem; /* More padding */
-      font-size: 1.2rem; /* Larger font */
+      padding: 1rem 2.5rem;
+      font-size: 1.2rem;
       font-weight: bold;
       width: 100%;
-      margin-top: 1.5rem; /* More space above button */
-      transition: all 0.3s ease-in-out; /* Smooth transition for all properties */
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Initial button shadow */
+      margin-top: 1.5rem;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
 
     .btn-signup:hover {
-      background: linear-gradient(135deg, var(--dark-pink) 0%, var(--main-pink) 100%); /* Reverse gradient on hover */
-      transform: translateY(-3px); /* More pronounced lift */
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+      background: linear-gradient(135deg, var(--dark-pink) 0%, var(--main-pink) 100%);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
       color: white;
     }
 
     .login-link {
-      margin-top: 2rem; /* More space below button */
+      margin-top: 2rem;
       font-size: 1rem;
       color: var(--secondary-text-color);
     }
@@ -186,7 +184,7 @@
         color: green;
         font-weight: bold;
         margin-top: 1rem;
-        display: none; /* Hidden by default */
+        display: none;
     }
 
     footer {
@@ -197,7 +195,7 @@
         border-top: 1px solid #ddd;
         text-align: center;
         padding: 1.5rem 0;
-        margin-top: auto; /* Pushes footer to the bottom */
+        margin-top: auto;
     }
 
     footer p, footer a {
@@ -211,13 +209,12 @@
         text-decoration: underline;
     }
 
-    /* Responsive adjustments */
     @media (max-width: 576px) {
       body {
-        padding: 0; /* Remove body padding on small screens as navbar and form have their own */
+        padding: 0;
       }
       .main-content-wrapper {
-        padding: 15px; /* Adjust padding for wrapper on small screens */
+        padding: 15px;
       }
       .account-form-container {
         padding: 1.8rem;
