@@ -52,46 +52,40 @@
       z-index: 10; /* Ensure it's above other content and overlay */
     }
 
+    /* General navbar link styling - this will apply to ALL 'a' tags inside navbar */
     .navbar a {
-      color: var(--main-pink) !important;
+      color: var(--main-pink) !important; /* Forces pink color for all links */
       font-weight: bold;
       transition: all 0.3s;
     }
 
     .navbar a:hover {
-      color: var(--dark-pink) !important;
+      color: var(--dark-pink) !important; /* Darker pink on hover */
       transform: translateY(-2px);
     }
 
+    /* Specific styling for the brand/logo to ensure it's pink and has its unique font */
     .navbar-brand {
       font-size: 1.8rem;
       font-family: 'Brush Script MT', cursive;
+      /* The 'navbar a' rule above already colors it pink, so no need for color here */
     }
 
-    /* REMOVE OR MODIFY THIS SECTION TO MATCH OTHER PAGES */
-    /*
+    /* Override any button-like styling for nav-links to make them look like plain text links */
     .navbar .nav-link {
-      background-color: hotpink;
-      color: white !important;
-      margin-right: 0.5rem;
-      padding: 0.5rem 1rem;
-      font-weight: bold;
+      background-color: transparent !important; /* No background color */
+      padding: 0.5rem 1rem !important; /* Standard padding for Bootstrap nav-link, not button padding */
+      margin-right: 0; /* Remove any extra margin if present from old button style */
+      /* Color is already set by .navbar a, so no need to redeclare here */
+      /* font-weight is also set by .navbar a */
     }
 
     .navbar .nav-link:hover {
-      background-color: deeppink;
+      background-color: transparent !important; /* No background on hover */
+      /* Color is already set by .navbar a:hover */
+      transform: translateY(0) !important; /* Remove any translateY specific to old button hover */
     }
-    */
 
-    /* The above block is causing the issue. If your other pages don't have
-      specific styling for .navbar .nav-link, then simply remove this entire
-      block. The general .navbar a rules will then apply to all links.
-
-      If your other pages *do* have specific .nav-link styling that makes
-      them look different from .navbar a, you need to copy that specific
-      styling here. However, based on the image, it seems you want them to
-      be simple text links.
-    */
 
     /* Main content wrapper to center the form */
     .main-content-wrapper {
@@ -119,7 +113,7 @@
     }
 
     .account-form-container h1 {
-      color: var(--main-pink);
+      color: var(--main-pink); /* Ensure heading remains pink */
       margin-bottom: 2.5rem; /* More space below heading */
       font-size: 2.8rem; /* Larger heading */
       font-weight: bold;
